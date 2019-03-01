@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/material-todo/static/css/main.ac62e830.chunk.css"
   },
   {
-    "revision": "56b767131e49e3260d38471106d970b4",
+    "revision": "514f110b3ba23a29180473f2504c713a",
     "url": "/material-todo/index.html"
   }
 ];
