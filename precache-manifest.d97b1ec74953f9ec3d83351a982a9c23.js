@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/material-todo/static/js/runtime~main.89ea08fe.js"
   },
   {
-    "revision": "b62aa8858519aae0b9fa",
-    "url": "/material-todo/static/js/main.b62aa885.chunk.js"
+    "revision": "f2960093de37d0b93550",
+    "url": "/material-todo/static/js/main.f2960093.chunk.js"
   },
   {
-    "revision": "fd5cfe58050327aab750",
-    "url": "/material-todo/static/js/2.fd5cfe58.chunk.js"
+    "revision": "ca2acd1f97ff748c0a88",
+    "url": "/material-todo/static/js/2.ca2acd1f.chunk.js"
   },
   {
-    "revision": "b62aa8858519aae0b9fa",
+    "revision": "f2960093de37d0b93550",
     "url": "/material-todo/static/css/main.ac62e830.chunk.css"
   },
   {
-    "revision": "19672de66d46d46bab3c2cfe209cce7a",
+    "revision": "56b767131e49e3260d38471106d970b4",
     "url": "/material-todo/index.html"
   }
 ];
