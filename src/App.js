@@ -1,4 +1,4 @@
-import { CardContent } from '@material-ui/core';
+import { CardContent, Slide } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -25,6 +25,7 @@ class App extends Component {
     this.setState({ [key]: event.target.value });
   };
   createTodo = () => {
+    this.finishEdit();
     const { newTodo } = this.state;
     if (newTodo.length > 0) {
       this.setState(prevState => ({
@@ -39,17 +40,22 @@ class App extends Component {
     }
   };
   deleteTodo = index => () => {
+    this.finishEdit();
     const todos = this.state.todos;
     todos.splice(index, 1);
     this.setState({ todos });
   };
   editTodo = index => () => {
-    this.setState({ todoBeingEdited: index });
+    this.finishEdit();
+    this.setState(prevState => ({
+      todoBeingEdited: index,
+      newTodoDescription: prevState.todos[index].description
+    }));
   };
   finishEdit = () => {
     const { todoBeingEdited, todos, newTodoDescription } = this.state;
-    if (todoBeingEdited > -1 && todos.length > 0) {
-      const todo = this.state.todos[todoBeingEdited];
+    const todo = this.state.todos[todoBeingEdited];
+    if (todoBeingEdited > -1 && todos.length > 0 && todo) {
       const todoEdited = {
         title: todo.title,
         description: newTodoDescription
@@ -66,7 +72,7 @@ class App extends Component {
           <Toolbar>
             <Typography variant="title">Material To Do </Typography>
             <div style={{ paddingLeft: 4 }}>
-              <img style={{ maxWidth: 24 }} src={writingIcon} />
+              <img alt="writing" style={{ maxWidth: 24 }} src={writingIcon} />
             </div>
           </Toolbar>
         </AppBar>
@@ -91,34 +97,36 @@ class App extends Component {
         <div style={{ padding: 4 }}>
           {this.state.todos.map((todo, i) => (
             <div style={{ padding: 4 }} key={i}>
-              <Card>
-                <CardContent>
-                  <Typography onClick={this.finishEdit} variant="subheading">
-                    {todo.title}
-                    <EditOutlinedIcon
-                      style={{ float: 'right', padding: 4 }}
-                      onClick={this.editTodo(i)}
-                    />
-                    <DeleteOutlinedIcon
-                      style={{ float: 'right', padding: 4 }}
-                      onClick={this.deleteTodo(i)}
-                    />
-                  </Typography>
-                  {this.state.todoBeingEdited === i ? (
-                    <Input
-                      autoFocus
-                      placeholder="Describe your to do..."
-                      onChange={this.handleInput('newTodoDescription')}
-                      value={this.state.newTodoDescription}
-                      fullWidth
-                    />
-                  ) : (
-                    <Typography onClick={this.editTodo(i)}>
-                      {todo.description || 'Description goes here...'}
+              <Slide direction="up" in>
+                <Card>
+                  <CardContent>
+                    <Typography onClick={this.finishEdit} variant="subheading">
+                      {todo.title}
+                      <EditOutlinedIcon
+                        style={{ float: 'right', padding: 4 }}
+                        onClick={this.editTodo(i)}
+                      />
+                      <DeleteOutlinedIcon
+                        style={{ float: 'right', padding: 4 }}
+                        onClick={this.deleteTodo(i)}
+                      />
                     </Typography>
-                  )}
-                </CardContent>
-              </Card>
+                    {this.state.todoBeingEdited === i ? (
+                      <Input
+                        autoFocus
+                        placeholder="Describe your to do..."
+                        onChange={this.handleInput('newTodoDescription')}
+                        value={this.state.newTodoDescription}
+                        fullWidth
+                      />
+                    ) : (
+                      <Typography onClick={this.editTodo(i)}>
+                        {todo.description || 'Description goes here...'}
+                      </Typography>
+                    )}
+                  </CardContent>
+                </Card>
+              </Slide>
             </div>
           ))}
         </div>
