@@ -1,14 +1,16 @@
 {
-  "main.css": "/material-todo/static/css/main.ac62e830.chunk.css",
-  "main.js": "/material-todo/static/js/main.ddbf1a67.chunk.js",
-  "main.js.map": "/material-todo/static/js/main.ddbf1a67.chunk.js.map",
+  "main.css": "/material-todo/static/css/main.26578458.chunk.css",
+  "main.js": "/material-todo/static/js/main.c9a46c5e.chunk.js",
+  "main.js.map": "/material-todo/static/js/main.c9a46c5e.chunk.js.map",
   "runtime~main.js": "/material-todo/static/js/runtime~main.89ea08fe.js",
   "runtime~main.js.map": "/material-todo/static/js/runtime~main.89ea08fe.js.map",
-  "static/js/2.ca2acd1f.chunk.js": "/material-todo/static/js/2.ca2acd1f.chunk.js",
-  "static/js/2.ca2acd1f.chunk.js.map": "/material-todo/static/js/2.ca2acd1f.chunk.js.map",
+  "static/css/2.30b0d479.chunk.css": "/material-todo/static/css/2.30b0d479.chunk.css",
+  "static/js/2.454eb987.chunk.js": "/material-todo/static/js/2.454eb987.chunk.js",
+  "static/js/2.454eb987.chunk.js.map": "/material-todo/static/js/2.454eb987.chunk.js.map",
   "index.html": "/material-todo/index.html",
-  "precache-manifest.091f5cba6f6f230a4e7387598701fe29.js": "/material-todo/precache-manifest.091f5cba6f6f230a4e7387598701fe29.js",
+  "precache-manifest.d37df6cdd1047e1222c8b6919a0e7e56.js": "/material-todo/precache-manifest.d37df6cdd1047e1222c8b6919a0e7e56.js",
   "service-worker.js": "/material-todo/service-worker.js",
-  "static/css/main.ac62e830.chunk.css.map": "/material-todo/static/css/main.ac62e830.chunk.css.map",
+  "static/css/2.30b0d479.chunk.css.map": "/material-todo/static/css/2.30b0d479.chunk.css.map",
+  "static/css/main.26578458.chunk.css.map": "/material-todo/static/css/main.26578458.chunk.css.map",
   "static/media/apple-touch-icon.png": "/material-todo/static/media/apple-touch-icon.4ec7d8e7.png"
 }
