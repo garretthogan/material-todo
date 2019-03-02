@@ -1,0 +1,19 @@
+{
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "material-todo-20190302105017-authRole",
+            "UnauthRoleArn": "arn:aws:iam::786856905369:role/material-todo-20190302105017-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::786856905369:role/material-todo-20190302105017-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "material-todo-20190302105017-deployment",
+            "UnauthRoleName": "material-todo-20190302105017-unauthRole",
+            "StackName": "material-todo-20190302105017",
+            "StackId": "arn:aws:cloudformation:us-east-1:786856905369:stack/material-todo-20190302105017/063954f0-3d1c-11e9-a925-0ae81055537e"
+        },
+        "categories": {
+            "auth": {
+                "cognitod6c12c16": {}
+            }
+        }
+    }
+}

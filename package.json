@@ -6,10 +6,13 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-react": "^2.3.0",
     "gh-pages": "^2.0.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "shortid": "^2.2.14"
   },
   "scripts": {
     "predeploy": "npm run build",

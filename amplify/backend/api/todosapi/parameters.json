@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "todosapi",
+    "schemaGraphql": "s3://material-todo-20190302105017-deployment/amplify-appsync-files/schema.graphql.1551558034438",
+    "ResolverBucket": "material-todo-20190302105017-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1551558034438"
+}
