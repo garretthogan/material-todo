@@ -97,7 +97,7 @@ class App extends Component {
         <div style={{ padding: 4 }}>
           {this.state.todos.map((todo, i) => (
             <div style={{ padding: 4 }} key={i}>
-              <Slide direction="up" in>
+              <Slide direction="right" in>
                 <Card>
                   <CardContent>
                     <Typography onClick={this.finishEdit} variant="subheading">
