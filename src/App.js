@@ -1,13 +1,8 @@
-import { CardContent, Slide } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
 import Input from '@material-ui/core/Input';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-import OfflineBoltOutlinedIcon from '@material-ui/icons/OfflineBoltOutlined';
 import React, { Component } from 'react';
 import { withAuthenticator } from 'aws-amplify-react';
 import { API, graphqlOperation } from 'aws-amplify';
@@ -17,6 +12,7 @@ import shortid from 'shortid';
 import * as queries from './graphql/queries';
 
 import writingIcon from './assets/apple-touch-icon.png';
+import ToDoItem from './components/ToDoItem';
 
 const createNewTodo = name =>
   API.graphql(
@@ -147,44 +143,16 @@ class App extends Component {
         </div>
         <div style={{ padding: 4 }}>
           {this.state.todos.map((todo, i) => (
-            <div style={{ padding: 4 }} key={i}>
-              <Slide direction="right" in>
-                <Card>
-                  <CardContent>
-                    <Typography onClick={this.finishEdit} variant="subheading">
-                      {todo.name}
-                      <EditOutlinedIcon
-                        style={{ float: 'right', padding: 4 }}
-                        onClick={this.editTodo(i)}
-                      />
-                      <DeleteOutlinedIcon
-                        style={{ float: 'right', padding: 4 }}
-                        onClick={this.deleteTodo(i)}
-                      />
-                      {this.state.todoBeingEdited === i && (
-                        <OfflineBoltOutlinedIcon
-                          style={{ float: 'right', padding: 4 }}
-                        />
-                      )}
-                    </Typography>
-                    {this.state.todoBeingEdited === i ? (
-                      <Input
-                        autoFocus
-                        placeholder="Describe your to do..."
-                        onChange={this.handleInput('newTodoDescription')}
-                        onBlur={this.finishEdit}
-                        value={this.state.newTodoDescription}
-                        fullWidth
-                      />
-                    ) : (
-                      <Typography onClick={this.editTodo(i)}>
-                        {todo.description || 'Description goes here...'}
-                      </Typography>
-                    )}
-                  </CardContent>
-                </Card>
-              </Slide>
-            </div>
+            <ToDoItem
+              key={i}
+              {...todo}
+              isTodoBeingEdited={this.state.todoBeingEdited === i}
+              newDescription={this.state.newTodoDescription}
+              onStartEdit={this.editTodo(i)}
+              onFinishEdit={this.finishEdit}
+              onEditDescription={this.handleInput('newTodoDescription')}
+              onDelete={this.deleteTodo(i)}
+            />
           ))}
         </div>
       </div>
